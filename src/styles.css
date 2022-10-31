@@ -1,1 +1,114 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.ml20 {
+  margin-left: 20px !important;
+}
+
+.mr20 {
+  margin-right: 20px !important;
+}
+
+.mt20 {
+  margin-top: 20px !important;
+}
+
+.mb20 {
+  margin-bottom: 20px !important;
+}
+
+.ml10 {
+  margin-left: 10px !important;
+}
+
+.mr10 {
+  margin-right: 10px !important;
+}
+
+.mt10 {
+  margin-top: 10px !important;
+}
+
+.mb10 {
+  margin-bottom: 10px !important;
+}
+
+.m10 {
+  margin: 10px !important;
+}
+
+.m0 {
+  margin: 0 !important;
+}
+
+.p7 {
+  padding: 7px;
+}
+
+.p10 {
+  padding: 10px;
+}
+
+.p20 {
+  padding: 20px;
+}
+
+body {
+  scrollbar-width: thin;
+  /* "auto" or "thin" */
+  scrollbar-color: #3f51b5 lightgray;
+  /* scroll thumb and track */
+}
+
+body {
+  scrollbar-width: thin;
+  /* "auto" or "thin" */
+  scrollbar-color: #3f51b5 lightgray;
+  /* scroll thumb and track */
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3f51b5 lightgray;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: lightgray;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #3f51b5;
+  border-radius: 20px;
+  border: 3px solid lightgray;
+}

@@ -1,0 +1,19 @@
+.header-title {
+  font-weight: 500;
+  background-color: navy;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+h2 {
+  font-weight: 500;
+}
+
+button {
+  padding: 6px;
+}
+
+.w100 {
+  width: 100%;
+}

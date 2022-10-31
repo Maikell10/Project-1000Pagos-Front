@@ -1,0 +1,110 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row mt20">
+            <div class="col-md-6 offset-md-3">
+                <mat-card>
+                    <h2 class="header-title text-center">Consulta de movimiento Pago Móvil</h2>
+
+                    <form (ngSubmit)="validarPago()">
+
+                        <div class="w100" style="margin-bottom: 3px;">
+                            <div align="left" class="font-medium">Identificación:</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <mat-form-field appearance="fill" class="w100">
+                                    <mat-label>Nacionalidad</mat-label>
+                                    <mat-select [(ngModel)]="formData.nacionalidad"
+                                        [ngModelOptions]="{standalone: true}" required>
+                                        <mat-option></mat-option>
+                                        <mat-option *ngFor="let tipoIdentificacion of tiposIdentificacion"
+                                            [value]="tipoIdentificacion.codigo">
+                                            {{ tipoIdentificacion.codigo }}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-8">
+                                <mat-form-field appearance="fill" class="w100">
+                                    <mat-label>Identificación</mat-label>
+                                    <input matInput type="text" placeholder="Escriba la Identificación"
+                                        name="identificacion" [(ngModel)]="formData.identificacion" [input-validar]="2"
+                                        required appCampoTexto (limpiarTexto)="($event)" />
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="w100" style="margin-bottom: 3px;">
+                            <div align="left" class="font-medium">Número de Teléfono:</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <mat-form-field class="w100" appearance="fill">
+                                    <mat-label>Código</mat-label>
+                                    <mat-select [(ngModel)]="formData.contactPrefix"
+                                        [ngModelOptions]="{standalone: true}" required>
+                                        <mat-option></mat-option>
+                                        <mat-option *ngFor="let tipoOperadoras of tiposOperadoras"
+                                            [value]="tipoOperadoras.codigo">
+                                            {{ tipoOperadoras.codigo }}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-8">
+                                <mat-form-field class="w100" appearance="fill">
+                                    <mat-label>Teléfono</mat-label>
+                                    <input matInput type="text" name="telefono" [(ngModel)]="formData.telefono"
+                                        placeholder="Escriba el Teléfono" [input-validar]="2" appCampoTexto
+                                        (limpiarTexto)="($event)" maxlength="7" required="" />
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <mat-form-field appearance="fill" class="w100">
+                                    <mat-label>Referencia</mat-label>
+                                    <input [(ngModel)]="formData.referencia" required type="text" matInput
+                                        placeholder="Escriba la Referencia" name="referencia" appCampoTexto
+                                        (limpiarTexto)="($event)">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <mat-form-field appearance="fill" class="w100">
+                                    <mat-label>Monto</mat-label>
+                                    <input [(ngModel)]="formData.monto" required textCampoMonto matInput
+                                        placeholder="Escriba el Monto" name="monto" (cambioValor)="($event)">
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <mat-form-field class="example-full-width" appearance="fill" class="w100">
+                                    <mat-label>Seleccione la Fecha</mat-label>
+                                    <input matInput [min]="startDate" [max]="fechaMax" [matDatepicker]="picker"
+                                        [(ngModel)]="formData.fecha" required name="fecha" placeholder="dd/mm/aaaa"
+                                        disabled>
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker touchUi #picker disabled="false"></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+
+
+                        <app-spinner-load *ngIf="carga"></app-spinner-load>
+
+                        <div class="container text-center mt10">
+                            <button mat-raised-button color="primary" class="w100">CONSULTAR</button>
+                        </div>
+
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

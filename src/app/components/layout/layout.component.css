@@ -1,0 +1,9 @@
+p {
+  margin: 0 0 0px;
+}
+
+.navbar {
+  padding: 20px;
+  display: flex;
+  background-color: darkblue;
+}
